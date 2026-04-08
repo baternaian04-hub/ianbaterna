@@ -32,6 +32,12 @@ const projects = [
     url: "https://complyhub.ai/",
     tags: ["SaaS", "AI", "Compliance"],
   },
+  {
+    title: "Unicorn CMS",
+    desc: "Content management system built for Australian businesses, offering streamlined website management and publishing workflows.",
+    url: "https://unicorn-cms.au/",
+    tags: ["CMS", "SaaS", "Web Platform"],
+  },
 ];
 
 const ProjectsSection = () => {

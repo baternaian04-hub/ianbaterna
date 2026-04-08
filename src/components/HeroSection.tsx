@@ -50,13 +50,33 @@ const HeroSection = () => {
             transition={{ duration: 0.8, delay: 0.2 }}
           >
             <div className="relative">
-              <div className="w-64 h-64 lg:w-80 lg:h-80 rounded-2xl overflow-hidden glow border-2 border-primary/20">
+              {/* Animated ring */}
+              <motion.div
+                className="absolute -inset-3 rounded-full border-2 border-primary/20"
+                animate={{ rotate: 360 }}
+                transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+                style={{ borderStyle: "dashed" }}
+              />
+              {/* Glow pulse */}
+              <motion.div
+                className="absolute -inset-1 rounded-full bg-primary/10 blur-xl"
+                animate={{ scale: [1, 1.15, 1], opacity: [0.3, 0.15, 0.3] }}
+                transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+              />
+              {/* Profile image */}
+              <div className="relative w-64 h-64 lg:w-80 lg:h-80 rounded-full overflow-hidden border-2 border-primary/30 glow">
                 <img src={profileImage} alt="Ian Baterna" className="w-full h-full object-cover" width={320} height={320} />
               </div>
-              <div className="absolute -bottom-3 -right-3 w-20 h-20 rounded-xl bg-primary flex items-center justify-center">
-                <span className="text-primary-foreground font-display font-bold text-lg">4+</span>
-              </div>
-              <p className="absolute -bottom-3 -right-3 mt-1 text-[10px] text-primary-foreground font-display text-center w-20 pb-1">years exp.</p>
+              {/* Badge */}
+              <motion.div
+                className="absolute -bottom-2 -right-2 w-16 h-16 rounded-full bg-primary flex flex-col items-center justify-center shadow-lg"
+                initial={{ scale: 0 }}
+                animate={{ scale: 1 }}
+                transition={{ delay: 0.8, type: "spring", stiffness: 200 }}
+              >
+                <span className="text-primary-foreground font-display font-bold text-base leading-none">4+</span>
+                <span className="text-primary-foreground/80 text-[9px] font-display">yrs</span>
+              </motion.div>
             </div>
           </motion.div>
         </div>
