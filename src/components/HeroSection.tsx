@@ -74,7 +74,7 @@ const HeroSection = () => {
                 animate={{ scale: 1 }}
                 transition={{ delay: 0.8, type: "spring", stiffness: 200 }}
               >
-                <span className="text-primary-foreground font-display font-bold text-base leading-none">4+</span>
+                <span className="text-primary-foreground font-display font-bold text-base leading-none">5+</span>
                 <span className="text-primary-foreground/80 text-[9px] font-display">yrs</span>
               </motion.div>
             </div>
