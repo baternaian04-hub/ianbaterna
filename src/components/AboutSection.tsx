@@ -21,8 +21,7 @@ const AboutSection = () => {
         >
           <p className="text-primary font-display font-medium tracking-wider uppercase text-sm mb-3">About Me</p>
           <h2 className="text-3xl lg:text-5xl font-display font-bold mb-8">
-            Building digital experiences<br />
-            <span className="text-muted-foreground">that deliver results.</span>
+            Digital Experiences
           </h2>
           <p className="text-muted-foreground text-lg max-w-3xl leading-relaxed">
             I specialize in creating high-performing, user-centered websites and applications that not only look great but also deliver measurable results. Whether it's improving site performance, enhancing user experience, or solving complex technical challenges, I approach every project with a focus on efficiency, scalability, and impact.
