@@ -21,18 +21,6 @@ const projects = [
     tags: ["Agency", "Portfolio", "Branding"],
   },
   {
-    title: "Vivacity Training",
-    desc: "Professional development platform for VET sector professionals with online courses and membership access.",
-    url: "https://www.vivacity.training/",
-    tags: ["EdTech", "Membership", "LMS"],
-  },
-  {
-    title: "ComplyHub AI",
-    desc: "AI-powered compliance management SaaS for RTOs with standards mapping, evidence tracking, and audit-ready workflows.",
-    url: "https://complyhub.ai/",
-    tags: ["SaaS", "AI", "Compliance"],
-  },
-  {
     title: "Unicorn CMS",
     desc: "Content management system built for Australian businesses, offering streamlined website management and publishing workflows.",
     url: "https://unicorn-cms.au/",
