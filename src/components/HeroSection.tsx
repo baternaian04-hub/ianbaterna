@@ -31,7 +31,7 @@ const HeroSection = () => {
               <span className="text-gradient-animated">Ian Baterna</span>
             </h1>
             <p className="text-muted-foreground text-lg lg:text-xl max-w-xl leading-relaxed mb-8">
-              A results-driven web developer with 4+ years of experience building high-performing, user-centered digital experiences.
+              A results-driven web developer with 5+ years of experience building high-performing, user-centered digital experiences.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
               <motion.a
