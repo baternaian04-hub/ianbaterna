@@ -40,9 +40,12 @@ const ProjectsSection = () => {
           className="mb-16"
         >
           <p className="text-primary font-display font-medium tracking-wider uppercase text-sm mb-3">Projects</p>
-          <h2 className="text-3xl lg:text-5xl font-display font-bold">
+          <h2 className="text-3xl lg:text-5xl font-display font-bold mb-5">
             Selected Work
           </h2>
+          <p className="text-muted-foreground text-base lg:text-lg max-w-3xl leading-relaxed">
+            These are some of the live, publicly available websites I've worked on. A number of other projects aren't listed here — some have inactive hosting on the client's end, and others are web applications that require a login to access.
+          </p>
         </motion.div>
 
         <div className="grid gap-4">
