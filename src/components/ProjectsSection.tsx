@@ -40,7 +40,7 @@ const ProjectsSection = () => {
           className="mb-16"
         >
           <p className="text-primary font-display font-medium tracking-wider uppercase text-sm mb-3">Projects</p>
-          <h2 className="text-3xl lg:text-5xl font-display font-bold mb-5">
+          <h2 className="text-3xl lg:text-5xl font-display font-semibold mb-5">
             Selected Work
           </h2>
           <p className="text-muted-foreground text-base lg:text-lg max-w-3xl leading-relaxed">

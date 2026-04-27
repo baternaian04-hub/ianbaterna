@@ -37,7 +37,7 @@ const SkillsSection = () => {
           <p className="text-primary font-display font-medium tracking-wider uppercase text-sm mb-3">
             Skills
           </p>
-          <h2 className="text-3xl lg:text-5xl font-display font-bold mb-6">
+          <h2 className="text-3xl lg:text-5xl font-display font-semibold mb-6">
             Tools & technologies
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl leading-relaxed">

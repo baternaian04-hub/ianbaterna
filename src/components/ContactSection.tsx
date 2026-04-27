@@ -32,7 +32,7 @@ const ContactSection = () => {
           className="text-center mb-16"
         >
           <p className="text-primary font-display font-medium tracking-wider uppercase text-sm mb-3">Contact</p>
-          <h2 className="text-3xl lg:text-5xl font-display font-bold mb-6">
+          <h2 className="text-3xl lg:text-5xl font-display font-semibold mb-6">
             Let's work together.
           </h2>
           <p className="text-muted-foreground text-lg max-w-xl mx-auto">

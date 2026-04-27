@@ -26,7 +26,7 @@ const HeroSection = () => {
             <p className="text-primary font-display font-medium tracking-wider uppercase text-sm mb-4">
               Web Developer
             </p>
-            <h1 className="text-4xl sm:text-5xl lg:text-7xl font-display font-bold leading-[1.1] mb-6">
+            <h1 className="text-4xl sm:text-5xl lg:text-7xl font-display font-semibold leading-[1.1] mb-6">
               Hi, I'm{" "}
               <span className="text-gradient-animated">Ian Baterna</span>
             </h1>
