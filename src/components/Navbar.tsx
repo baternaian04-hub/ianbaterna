@@ -9,25 +9,25 @@ const links = [
   { label: "Contact", href: "#contact" },
 ];
 
-const easeInOutCubic = (t: number) =>
-  t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+// Ease-out quart — fast start, smooth settle. No initial delay.
+const easeOutQuart = (t: number) => 1 - Math.pow(1 - t, 4);
 
-const smoothScrollTo = (targetY: number, duration = 900) => {
+const smoothScrollTo = (targetY: number, duration = 700) => {
   const startY = window.scrollY;
   const diff = targetY - startY;
   if (Math.abs(diff) < 1) return;
-  let startTime: number | null = null;
+  const startTime = performance.now();
 
-  const step = (timestamp: number) => {
-    if (startTime === null) startTime = timestamp;
-    const elapsed = timestamp - startTime;
+  // Kick off immediately on this frame so the user sees motion on click.
+  const step = (now: number) => {
+    const elapsed = now - startTime;
     const progress = Math.min(elapsed / duration, 1);
-    const eased = easeInOutCubic(progress);
+    const eased = easeOutQuart(progress);
     window.scrollTo(0, startY + diff * eased);
     if (progress < 1) requestAnimationFrame(step);
   };
 
-  requestAnimationFrame(step);
+  step(performance.now());
 };
 
 const handleNavClick = (
