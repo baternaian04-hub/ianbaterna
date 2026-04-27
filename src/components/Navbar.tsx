@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { motion } from "framer-motion";
+import profileImage from "@/assets/ian-profile.jpg";
 
 const links = [
   { label: "About", href: "#about" },
@@ -20,7 +21,14 @@ const Navbar = () => {
       className="fixed top-0 left-0 right-0 z-50 backdrop-blur-xl bg-background/80 border-b border-border/50"
     >
       <div className="container max-w-6xl flex items-center justify-between h-16 px-6">
-        <a href="#" className="font-display font-bold text-lg group">
+        <a href="#" className="flex items-center gap-2 font-display font-bold text-lg group">
+          <img
+            src={profileImage}
+            alt="Ian Baterna"
+            width={36}
+            height={36}
+            className="w-9 h-9 rounded-full object-cover border border-primary/40"
+          />
           ian<span className="text-primary">.</span>
         </a>
 
