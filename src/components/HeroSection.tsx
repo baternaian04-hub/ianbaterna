@@ -13,7 +13,7 @@ const HeroSection = () => {
       
       {/* Glow orb */}
       <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full opacity-10"
-        style={{ background: 'radial-gradient(circle, hsl(45 90% 55%), transparent 70%)' }} />
+        style={{ background: 'radial-gradient(circle, hsl(180 70% 50%), transparent 70%)' }} />
 
       <div className="container max-w-6xl relative z-10">
         <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
