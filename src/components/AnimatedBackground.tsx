@@ -9,7 +9,7 @@ const AnimatedBackground = () => {
           height: 520,
           top: "-10%",
           left: "-10%",
-          background: "hsl(45 90% 55%)",
+          background: "hsl(180 70% 50%)",
           animationDelay: "0s",
         }}
       />
@@ -20,7 +20,7 @@ const AnimatedBackground = () => {
           height: 480,
           bottom: "-15%",
           right: "-10%",
-          background: "hsl(35 95% 65%)",
+          background: "hsl(160 70% 55%)",
           animationDelay: "-6s",
         }}
       />
@@ -31,7 +31,7 @@ const AnimatedBackground = () => {
           height: 380,
           top: "45%",
           left: "55%",
-          background: "hsl(45 90% 55%)",
+          background: "hsl(200 85% 60%)",
           opacity: 0.1,
           animationDelay: "-12s",
         }}
