@@ -25,27 +25,27 @@ const skills = [
 
 const SkillsSection = () => {
   return (
-    <section id="skills" className="py-24 lg:py-32 px-6 relative">
+    <section id="skills" className="py-16 sm:py-24 lg:py-32 px-5 sm:px-6 relative">
       <div className="container max-w-6xl">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="mb-14"
+          className="mb-10 sm:mb-14"
         >
-          <p className="text-primary font-display font-medium tracking-wider uppercase text-sm mb-3">
+          <p className="text-primary font-display font-medium tracking-wider uppercase text-xs sm:text-sm mb-3">
             Skills
           </p>
-          <h2 className="text-3xl lg:text-5xl font-display font-semibold mb-6">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-semibold mb-4 sm:mb-6">
             Tools & technologies
           </h2>
-          <p className="text-muted-foreground text-lg max-w-2xl leading-relaxed">
+          <p className="text-muted-foreground text-base sm:text-lg max-w-2xl leading-relaxed">
             A curated stack honed across 5+ years of building, optimizing, and shipping production-grade web experiences.
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 sm:gap-4">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-2.5 sm:gap-4">
           {skills.map((skill, i) => {
             const Icon = skill.icon;
             return (
@@ -56,13 +56,13 @@ const SkillsSection = () => {
                 viewport={{ once: true, margin: "-50px" }}
                 transition={{ duration: 0.4, delay: (i % 5) * 0.05 + Math.floor(i / 5) * 0.08 }}
                 whileHover={{ y: -4, scale: 1.03 }}
-                className="group relative glass-card rounded-xl p-4 sm:p-5 flex flex-col items-start gap-3 hover:border-primary/50 transition-colors overflow-hidden"
+                className="group relative glass-card rounded-xl p-3.5 sm:p-5 flex flex-col items-start gap-2.5 sm:gap-3 hover:border-primary/50 transition-colors overflow-hidden"
               >
                 <div className="absolute inset-0 bg-gradient-to-br from-primary/0 via-primary/0 to-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 <div className="relative z-10 w-9 h-9 rounded-lg bg-primary/10 flex items-center justify-center border border-primary/20 group-hover:bg-primary/20 group-hover:rotate-6 transition-all duration-300">
                   <Icon className="w-4 h-4 text-primary" />
                 </div>
-                <span className="relative z-10 font-display font-medium text-sm leading-tight">
+                <span className="relative z-10 font-display font-medium text-xs sm:text-sm leading-tight">
                   {skill.name}
                 </span>
               </motion.div>
@@ -76,10 +76,10 @@ const SkillsSection = () => {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="mt-12 overflow-hidden relative"
+          className="mt-10 sm:mt-12 -mx-5 sm:mx-0 overflow-hidden relative"
         >
-          <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-background to-transparent z-10 pointer-events-none" />
-          <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-background to-transparent z-10 pointer-events-none" />
+          <div className="absolute left-0 top-0 bottom-0 w-12 sm:w-20 bg-gradient-to-r from-background to-transparent z-10 pointer-events-none" />
+          <div className="absolute right-0 top-0 bottom-0 w-12 sm:w-20 bg-gradient-to-l from-background to-transparent z-10 pointer-events-none" />
           <div className="flex gap-3 animate-marquee whitespace-nowrap">
             {[...skills, ...skills].map((s, idx) => (
               <span

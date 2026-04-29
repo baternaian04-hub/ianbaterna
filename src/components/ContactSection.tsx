@@ -22,59 +22,59 @@ const ContactSection = () => {
   };
 
   return (
-    <section id="contact" className="py-24 lg:py-32 px-6">
+    <section id="contact" className="py-16 sm:py-24 lg:py-32 px-5 sm:px-6">
       <div className="container max-w-5xl">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-10 sm:mb-16"
         >
-          <p className="text-primary font-display font-medium tracking-wider uppercase text-sm mb-3">Contact</p>
-          <h2 className="text-3xl lg:text-5xl font-display font-semibold mb-6">
+          <p className="text-primary font-display font-medium tracking-wider uppercase text-xs sm:text-sm mb-3">Contact</p>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-semibold mb-4 sm:mb-6">
             Let's work together.
           </h2>
-          <p className="text-muted-foreground text-lg max-w-xl mx-auto">
+          <p className="text-muted-foreground text-base sm:text-lg max-w-xl mx-auto">
             I'm always open to new projects and collaborations. Let's turn your ideas into powerful, growth-driven digital solutions.
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-12 lg:gap-16">
+        <div className="grid md:grid-cols-2 gap-8 md:gap-12 lg:gap-16">
           {/* Contact Info */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="space-y-8"
+            className="space-y-6 sm:space-y-8"
           >
             <div>
-              <h3 className="text-xl font-display font-semibold mb-6">Get in touch</h3>
-              <div className="space-y-5">
+              <h3 className="text-lg sm:text-xl font-display font-semibold mb-5 sm:mb-6">Get in touch</h3>
+              <div className="space-y-4 sm:space-y-5">
                 <a
                   href="mailto:baternaian95@gmail.com"
-                  className="flex items-center gap-4 group"
+                  className="flex items-center gap-3 sm:gap-4 group"
                 >
-                  <div className="w-12 h-12 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
+                  <div className="shrink-0 w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
                     <Mail className="w-5 h-5 text-primary" />
                   </div>
-                  <div>
+                  <div className="min-w-0">
                     <p className="text-xs text-muted-foreground uppercase tracking-wider">Email</p>
-                    <p className="text-foreground font-medium">baternaian95@gmail.com</p>
+                    <p className="text-foreground font-medium text-sm sm:text-base break-all">baternaian95@gmail.com</p>
                   </div>
                 </a>
 
                 <a
                   href="tel:09684044242"
-                  className="flex items-center gap-4 group"
+                  className="flex items-center gap-3 sm:gap-4 group"
                 >
-                  <div className="w-12 h-12 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
+                  <div className="shrink-0 w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
                     <Phone className="w-5 h-5 text-primary" />
                   </div>
                   <div>
                     <p className="text-xs text-muted-foreground uppercase tracking-wider">Phone</p>
-                    <p className="text-foreground font-medium">09684044242</p>
+                    <p className="text-foreground font-medium text-sm sm:text-base">09684044242</p>
                   </div>
                 </a>
               </div>
@@ -89,7 +89,7 @@ const ContactSection = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="space-y-5 p-6 lg:p-8 rounded-2xl border border-border bg-card/50 backdrop-blur-sm"
+            className="space-y-4 sm:space-y-5 p-5 sm:p-6 lg:p-8 rounded-2xl border border-border bg-card/50 backdrop-blur-sm"
           >
             <div>
               <label className="text-sm text-muted-foreground mb-1.5 block">Name</label>

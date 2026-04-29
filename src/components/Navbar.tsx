@@ -46,7 +46,7 @@ const Navbar = () => {
       transition={{ duration: 0.5, ease: "easeOut" }}
       className="fixed top-0 left-0 right-0 z-50 backdrop-blur-xl bg-background/80 border-b border-border/50"
     >
-      <div className="container max-w-6xl flex items-center justify-between h-16 px-6">
+      <div className="container max-w-6xl flex items-center justify-between h-16 px-5 sm:px-6">
         <a
           href="#"
           onClick={(e) => handleNavClick(e, "#")}
@@ -77,7 +77,7 @@ const Navbar = () => {
 
       {/* Mobile menu */}
       {open && (
-        <div className="md:hidden border-b border-border bg-background/95 backdrop-blur-xl px-6 pb-4">
+        <div className="md:hidden border-b border-border bg-background/95 backdrop-blur-xl px-5 sm:px-6 pb-4 pt-2">
           {links.map(l => (
             <a
               key={l.label}
@@ -86,7 +86,7 @@ const Navbar = () => {
                 handleNavClick(e, l.href);
                 setOpen(false);
               }}
-              className="block py-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
+              className="block py-3 text-base text-muted-foreground hover:text-foreground transition-colors border-b border-border/30 last:border-0"
             >
               {l.label}
             </a>
