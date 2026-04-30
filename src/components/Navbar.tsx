@@ -98,9 +98,10 @@ const Navbar = () => {
             animate={{ x: 0 }}
             exit={{ x: "-100%" }}
             transition={{ duration: 0.5, ease: [0.83, 0, 0.17, 1] }}
-            className="md:hidden fixed inset-0 z-50 bg-background border-b border-border/50"
+            className="md:hidden fixed inset-0 z-40 w-screen h-screen bg-background"
+            style={{ backgroundColor: "hsl(var(--background))" }}
           >
-            <div className="flex flex-col h-full pt-24 px-6">
+            <div className="flex flex-col min-h-screen h-full pt-24 px-6">
               <div className="flex-1 flex flex-col">
                 {links.map((l, i) => (
                   <motion.a
