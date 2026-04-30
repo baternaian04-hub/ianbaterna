@@ -1,4 +1,4 @@
-name: Deploy Vite App (Main Branch Only)
+name: Deploy Vite App to GitHub Pages
 
 on:
   push:
@@ -12,9 +12,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout repository
+        uses: actions/checkout@v3
 
-      - name: Install Node
+      - name: Setup Node
         uses: actions/setup-node@v3
         with:
           node-version: 18
@@ -25,8 +26,8 @@ jobs:
       - name: Build project
         run: npm run build
 
-      - name: Deploy to GitHub Pages (main branch)
+      - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          branch: main
+          branch: gh-pages
           folder: dist
