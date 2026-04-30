@@ -121,7 +121,7 @@ const Navbar = () => {
                     }}
                     className="group flex items-center justify-between py-5 border-b border-border/40 text-foreground"
                   >
-                    <span className="font-display text-2xl font-semibold tracking-tight transition-colors group-hover:text-primary">
+                    <span className="font-display text-[20px] font-medium tracking-tight transition-colors group-hover:text-primary">
                       {l.label}
                     </span>
                     <span className="text-xs text-muted-foreground tabular-nums">
