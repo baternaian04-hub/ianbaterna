@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 200 40% 5%;
+    --foreground: 180 20% 94%;
+
+    --card: 200 35% 9%;
+    --card-foreground: 180 20% 94%;
+
+    --popover: 200 35% 9%;
+    --popover-foreground: 180 20% 94%;
+
+    --primary: 180 70% 50%;
+    --primary-foreground: 200 40% 5%;
+
+    --secondary: 200 25% 14%;
+    --secondary-foreground: 180 20% 88%;
+
+    --muted: 200 25% 12%;
+    --muted-foreground: 195 12% 58%;
+
+    --accent: 195 85% 55%;
+    --accent-foreground: 200 40% 5%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 200 25% 18%;
+    --input: 200 25% 18%;
+    --ring: 180 70% 50%;
+
+    --radius: 0.75rem;
+
+    --font-display: 'Jost', system-ui, sans-serif;
+    --font-body: 'Jost', system-ui, sans-serif;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-body);
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(135deg, hsl(180 70% 50%), hsl(200 85% 60%));
+  }
+
+  .glass-card {
+    @apply bg-card/60 backdrop-blur-xl border border-border/50;
+  }
+
+  .glow {
+    box-shadow: 0 0 40px -10px hsl(180 70% 50% / 0.25);
+  }
+
+  .text-gradient-animated {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(120deg, hsl(180 70% 50%), hsl(160 70% 55%), hsl(200 85% 60%), hsl(180 70% 50%));
+    background-size: 200% auto;
+    animation: shimmer 6s linear infinite;
+  }
+
+  .hover-lift {
+    @apply transition-all duration-300;
+  }
+  .hover-lift:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 40px -20px hsl(180 70% 50% / 0.35);
+  }
+
+  .animated-blob {
+    position: absolute;
+    border-radius: 9999px;
+    filter: blur(80px);
+    opacity: 0.18;
+    pointer-events: none;
+    animation: blob-float 18s ease-in-out infinite;
+  }
+
+  .noise-grid {
+    background-image:
+      linear-gradient(hsl(var(--foreground) / 0.04) 1px, transparent 1px),
+      linear-gradient(90deg, hsl(var(--foreground) / 0.04) 1px, transparent 1px);
+    background-size: 60px 60px;
+  }
+}
+
+@keyframes shimmer {
+  to { background-position: 200% center; }
+}
+
+@keyframes blob-float {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(40px, -30px) scale(1.1); }
+  66% { transform: translate(-30px, 40px) scale(0.95); }
+}
