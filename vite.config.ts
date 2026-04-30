@@ -4,9 +4,7 @@ import path from "path";
 import { componentTagger } from "lovable-tagger";
 
 export default defineConfig(({ mode }) => ({
-  base: process.env.NODE_ENV === "production"
-    ? "/ianbaterna/"   // ✅ for GitHub Pages
-    : "/",             // ✅ for local + Netlify dev
+  base: process.env.VITE_BASE_PATH || "/", // ✅ dynamic base
 
   server: {
     host: "::",
