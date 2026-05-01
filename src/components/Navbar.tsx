@@ -66,15 +66,31 @@ const Navbar = () => {
         </a>
 
         {/* Desktop */}
-        <div className="hidden md:flex items-center gap-8">
-          {links.map(l => (
+        <div className="hidden md:flex items-center gap-1 p-1 rounded-full border border-border/40 bg-background/40 backdrop-blur-md">
+          {links.map((l, i) => (
             <a
               key={l.label}
               href={l.href}
               onClick={(e) => handleNavClick(e, l.href)}
-              className="relative text-sm text-muted-foreground hover:text-foreground transition-colors font-medium after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-full after:bg-primary after:scale-x-0 hover:after:scale-x-100 after:origin-left after:transition-transform after:duration-300"
+              className="group relative px-4 py-1.5 text-sm font-medium text-muted-foreground hover:text-primary-foreground transition-colors duration-300"
             >
-              {l.label}
+              {/* Sliding pill background */}
+              <span
+                aria-hidden
+                className="absolute inset-0 rounded-full bg-primary scale-75 opacity-0 group-hover:scale-100 group-hover:opacity-100 transition-all duration-300 ease-[cubic-bezier(0.22,1,0.36,1)]"
+              />
+              {/* Glow halo */}
+              <span
+                aria-hidden
+                className="absolute inset-0 rounded-full bg-primary/40 blur-md opacity-0 group-hover:opacity-70 transition-opacity duration-500"
+              />
+              {/* Label with subtle counter */}
+              <span className="relative inline-flex items-center gap-1.5">
+                <span className="text-[10px] tabular-nums opacity-50 group-hover:opacity-90 transition-opacity">
+                  0{i + 1}
+                </span>
+                {l.label}
+              </span>
             </a>
           ))}
         </div>
