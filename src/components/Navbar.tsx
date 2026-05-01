@@ -66,31 +66,28 @@ const Navbar = () => {
         </a>
 
         {/* Desktop */}
-        <div className="hidden md:flex items-center gap-1 p-1 rounded-full border border-border/40 bg-background/40 backdrop-blur-md">
-          {links.map((l, i) => (
+        <div className="hidden md:flex items-center gap-2">
+          {links.map((l) => (
             <a
               key={l.label}
               href={l.href}
               onClick={(e) => handleNavClick(e, l.href)}
-              className="group relative px-4 py-1.5 text-sm font-medium text-muted-foreground hover:text-primary-foreground transition-colors duration-300"
+              className="group relative px-3 py-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors duration-300 overflow-hidden"
             >
-              {/* Sliding pill background */}
-              <span
-                aria-hidden
-                className="absolute inset-0 rounded-full bg-primary scale-75 opacity-0 group-hover:scale-100 group-hover:opacity-100 transition-all duration-300 ease-[cubic-bezier(0.22,1,0.36,1)]"
-              />
-              {/* Glow halo */}
-              <span
-                aria-hidden
-                className="absolute inset-0 rounded-full bg-primary/40 blur-md opacity-0 group-hover:opacity-70 transition-opacity duration-500"
-              />
-              {/* Label with subtle counter */}
-              <span className="relative inline-flex items-center gap-1.5">
-                <span className="text-[10px] tabular-nums opacity-50 group-hover:opacity-90 transition-opacity">
-                  0{i + 1}
+              {/* Vertical text swap */}
+              <span className="relative block h-5 overflow-hidden">
+                <span className="block transition-transform duration-500 ease-[cubic-bezier(0.65,0,0.35,1)] group-hover:-translate-y-full">
+                  {l.label}
                 </span>
-                {l.label}
+                <span className="absolute inset-0 block translate-y-full text-primary transition-transform duration-500 ease-[cubic-bezier(0.65,0,0.35,1)] group-hover:translate-y-0">
+                  {l.label}
+                </span>
               </span>
+              {/* Dot indicator */}
+              <span
+                aria-hidden
+                className="absolute left-1/2 -bottom-0.5 h-1 w-1 -translate-x-1/2 rounded-full bg-primary opacity-0 scale-0 group-hover:opacity-100 group-hover:scale-100 transition-all duration-300 ease-out shadow-[0_0_8px_hsl(var(--primary))]"
+              />
             </a>
           ))}
         </div>
