@@ -14,7 +14,7 @@ export default {
     },
     extend: {
       fontFamily: {
-        display: ['Jost', 'system-ui', 'sans-serif'],
+        display: ['Archivo Black', 'system-ui', 'sans-serif'],
         body: ['Jost', 'system-ui', 'sans-serif'],
       },
       colors: {
