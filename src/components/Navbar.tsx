@@ -66,28 +66,15 @@ const Navbar = () => {
         </a>
 
         {/* Desktop */}
-        <div className="hidden md:flex items-center gap-2">
-          {links.map((l) => (
+        <div className="hidden md:flex items-center gap-8">
+          {links.map(l => (
             <a
               key={l.label}
               href={l.href}
               onClick={(e) => handleNavClick(e, l.href)}
-              className="group relative px-3 py-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors duration-300 overflow-hidden"
+              className="relative text-sm text-muted-foreground hover:text-foreground transition-colors font-medium after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-full after:bg-primary after:scale-x-0 hover:after:scale-x-100 after:origin-left after:transition-transform after:duration-300"
             >
-              {/* Vertical text swap */}
-              <span className="relative block h-5 overflow-hidden">
-                <span className="block transition-transform duration-500 ease-[cubic-bezier(0.65,0,0.35,1)] group-hover:-translate-y-full">
-                  {l.label}
-                </span>
-                <span className="absolute inset-0 block translate-y-full text-primary transition-transform duration-500 ease-[cubic-bezier(0.65,0,0.35,1)] group-hover:translate-y-0">
-                  {l.label}
-                </span>
-              </span>
-              {/* Dot indicator */}
-              <span
-                aria-hidden
-                className="absolute left-1/2 -bottom-0.5 h-1 w-1 -translate-x-1/2 rounded-full bg-primary opacity-0 scale-0 group-hover:opacity-100 group-hover:scale-100 transition-all duration-300 ease-out shadow-[0_0_8px_hsl(var(--primary))]"
-              />
+              {l.label}
             </a>
           ))}
         </div>
