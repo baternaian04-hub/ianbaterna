@@ -13,10 +13,11 @@ export default {
       },
     },
     extend: {
-      fontFamily: {
-        display: ['Archivo Black', 'system-ui', 'sans-serif'],
-        body: ['Jost', 'system-ui', 'sans-serif'],
-      },
+     fontFamily: {
+  display: ['Jost', 'system-ui', 'sans-serif'],
+  body: ['Jost', 'system-ui', 'sans-serif'],
+  sans: ['Jost', 'system-ui', 'sans-serif'], // 👈 important
+},
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
