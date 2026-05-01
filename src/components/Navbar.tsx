@@ -38,6 +38,7 @@ const handleNavClick = (
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
+  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
   useEffect(() => {
     if (open) {
@@ -66,15 +67,26 @@ const Navbar = () => {
         </a>
 
         {/* Desktop */}
-        <div className="hidden md:flex items-center gap-8">
-          {links.map(l => (
+        <div
+          className="hidden md:flex items-center gap-8 relative"
+          onMouseLeave={() => setHoveredIndex(null)}
+        >
+          {links.map((l, i) => (
             <a
               key={l.label}
               href={l.href}
               onClick={(e) => handleNavClick(e, l.href)}
-              className="relative text-sm text-muted-foreground hover:text-foreground transition-colors font-medium after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-full after:bg-primary after:scale-x-0 hover:after:scale-x-100 after:origin-left after:transition-transform after:duration-300"
+              onMouseEnter={() => setHoveredIndex(i)}
+              className="relative text-sm text-muted-foreground hover:text-foreground transition-colors font-medium py-1"
             >
               {l.label}
+              {hoveredIndex === i && (
+                <motion.span
+                  layoutId="nav-underline"
+                  className="absolute left-0 right-0 -bottom-1 h-[2px] bg-primary"
+                  transition={{ type: "spring", stiffness: 380, damping: 30 }}
+                />
+              )}
             </a>
           ))}
         </div>
