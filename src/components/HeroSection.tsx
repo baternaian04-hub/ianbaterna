@@ -2,6 +2,32 @@ import { motion } from "framer-motion";
 import profileImage from "@/assets/ian-profile.jpg";
 import { ArrowDown } from "lucide-react";
 
+const smoothScrollTo = (targetY: number) => {
+  const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  window.scrollTo({
+    top: Math.max(0, targetY),
+    behavior: prefersReducedMotion ? "auto" : "smooth",
+  });
+};
+
+const handleNavClick = (
+  e: React.MouseEvent<HTMLAnchorElement>,
+  href: string
+) => {
+  if (!href.startsWith("#")) return;
+  e.preventDefault();
+  const id = href.slice(1);
+  if (!id) {
+    smoothScrollTo(0);
+    return;
+  }
+  const el = document.getElementById(id);
+  if (!el) return;
+  const offset = 64;
+  const targetY = el.getBoundingClientRect().top + window.scrollY - offset;
+  smoothScrollTo(targetY);
+};
+
 const HeroSection = () => {
   return (
     <section className="min-h-screen flex items-center justify-center relative overflow-hidden px-5 sm:px-6 pt-24 pb-16 lg:pt-0 lg:pb-0">
@@ -36,6 +62,7 @@ const HeroSection = () => {
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start">
               <motion.a
                 href="#projects"
+                onClick={(e) => handleNavClick(e, "#projects")}
                 whileHover={{ scale: 1.04, y: -2 }}
                 whileTap={{ scale: 0.97 }}
                 className="inline-flex items-center justify-center gap-2 px-7 sm:px-8 py-3 sm:py-3.5 rounded-lg bg-primary text-primary-foreground font-display font-semibold shadow-lg shadow-primary/20 transition-shadow hover:shadow-primary/40"
@@ -44,6 +71,7 @@ const HeroSection = () => {
               </motion.a>
               <motion.a
                 href="#contact"
+                onClick={(e) => handleNavClick(e, "#contact")}
                 whileHover={{ scale: 1.04, y: -2 }}
                 whileTap={{ scale: 0.97 }}
                 className="inline-flex items-center justify-center gap-2 px-7 sm:px-8 py-3 sm:py-3.5 rounded-lg border border-border text-foreground font-display font-medium hover:bg-secondary hover:border-primary/40 transition-colors"
