@@ -87,7 +87,7 @@ const HeroSection = () => {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            <div className="relative">
+            <div className="relative" data-parallax="0.15">
               {/* Animated ring */}
               <motion.div
                 className="absolute -inset-3 rounded-full border-2 border-primary/20"
