@@ -6,11 +6,15 @@ import ProjectsSection from "@/components/ProjectsSection";
 import ContactSection from "@/components/ContactSection";
 import ScrollProgress from "@/components/ScrollProgress";
 import AnimatedBackground from "@/components/AnimatedBackground";
+import ThreeBackground from "@/components/ThreeBackground";
+import { useGsapReveal } from "@/hooks/useGsapReveal";
 
 const Index = () => {
+  useGsapReveal();
   return (
     <div className="min-h-screen relative">
       <AnimatedBackground />
+      <ThreeBackground />
       <ScrollProgress />
       <Navbar />
       <HeroSection />
