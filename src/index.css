@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700;800;900&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -6,8 +6,8 @@
 
 @layer base {
   :root {
-    --background: 200 40% 5%;
-    --foreground: 180 20% 94%;
+    --background: 0 0% 5%;
+    --foreground: 205 20% 88%;
 
     --card: 200 35% 9%;
     --card-foreground: 180 20% 94%;
@@ -37,8 +37,8 @@
     --radius: 0.75rem;
 
     /* ✅ Fully Jost */
-    --font-display: 'Jost', system-ui, sans-serif;
-    --font-body: 'Jost', system-ui, sans-serif;
+    --font-display: 'Kanit', system-ui, sans-serif;
+    --font-body: 'Kanit', system-ui, sans-serif;
 
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
@@ -57,10 +57,15 @@
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply text-foreground;
+    background-color: #0C0C0C;
     font-family: var(--font-body);
     line-height: 1.6;
     letter-spacing: 0.01em;
+  }
+
+  html, #root {
+    background-color: #0C0C0C;
   }
 
   html {
@@ -87,6 +92,21 @@
 }
 
 @layer utilities {
+  .hero-heading {
+    background: linear-gradient(180deg, #646973 0%, #BBCCD7 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+  }
+
+  .contact-pill {
+    background: linear-gradient(123deg, #18011F 7%, #B600A8 37%, #7621B0 72%, #BE4C00 100%);
+    box-shadow: 0px 4px 4px rgba(181, 1, 167, 0.25), 4px 4px 12px #7721B1 inset;
+    outline: 2px solid #ffffff;
+    outline-offset: -3px;
+  }
+
   .text-gradient {
     @apply bg-clip-text text-transparent;
     background-image: linear-gradient(135deg, hsl(180 70% 50%), hsl(200 85% 60%));
