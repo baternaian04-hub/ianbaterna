@@ -14,9 +14,9 @@ export default {
     },
     extend: {
      fontFamily: {
-  display: ['Jost', 'system-ui', 'sans-serif'],
-  body: ['Jost', 'system-ui', 'sans-serif'],
-  sans: ['Jost', 'system-ui', 'sans-serif'], // 👈 important
+  display: ['Kanit', 'system-ui', 'sans-serif'],
+  body: ['Kanit', 'system-ui', 'sans-serif'],
+  sans: ['Kanit', 'system-ui', 'sans-serif'],
 },
       colors: {
         border: "hsl(var(--border))",
